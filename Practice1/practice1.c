@@ -11,8 +11,8 @@ double AverageMark;
 STUDENT *Exam(char *pInput,  char *pStudentName);
 
 int main(){
-  char Input[]="James Farmhand, 4; John Smith, 4, 2, 5, 3; Keisuke Konno, 3;";
-  char StudentName[]="James Farmhand";
+  char Input[]="James Farmhand,   4;   John Smith, 4,  2, 5,   3; Keisuke Konno, 3;";
+  char StudentName[]="John Smith";
   STUDENT* pStudent;
   
   if(Exam(Input,StudentName)==0){
@@ -28,20 +28,21 @@ int main(){
 
 STUDENT *Exam(char *pInput,  char *pStudentName){
   char *pfound;
-  STUDENT *Student = (STUDENT*)malloc(sizeof(STUDENT)); 
+  STUDENT *Student = (STUDENT*)malloc(sizeof(STUDENT));
+  int size_t = strlen(pStudentName);
 
   if(strstr(pInput,pStudentName)!=NULL){
     
     //pName
-    Student->pName = (char*)malloc(sizeof(pStudentName)+1);
+    Student->pName = (char*)malloc(sizeof(char)*size_t+1);
     strcpy(Student->pName,pStudentName);
     
     pfound = strstr(pInput,pStudentName);
 
     //nMarks
     int i=0;
-    while(pfound[i+strlen(pStudentName)+1] !=';'){
-      if(pfound[i+strlen(pStudentName)+1] == ' ')Student->nMarks++;
+    while(pfound[i+size_t+1] !=';'){
+      if(pfound[i+size_t+1] == ' ' && (pfound[i+size_t+3]==',' || pfound[i+size_t+3]==';'))Student->nMarks++;
       i++;
     }
 
@@ -49,11 +50,11 @@ STUDENT *Exam(char *pInput,  char *pStudentName){
     Student->pMarks = (int*)malloc(Student->nMarks*sizeof(int));
     int j=0;
     for(i=0;i<Student->nMarks;i++){
-      while(pfound[j+strlen(pStudentName)+1] != ';'){
-	if(pfound[j+strlen(pStudentName)+1]==' '){
-	  Student->pMarks[i] = atoi(&pfound[j+strlen(pStudentName)+1]);
+      while(pfound[j+size_t+1] != ';'){
+	if(pfound[j+size_t+1]==' ' &&(pfound[j+size_t+3]==',' || pfound[j+size_t+3]==';')){
+	  Student->pMarks[i] = atoi(&pfound[j+size_t+2]);
 	  Student->AverageMark += Student->pMarks[i];
-	  j +=1; 
+	  j +=2;
 	  break;
 	}
 	j++;
