@@ -2,20 +2,20 @@
 Write a function with prototype:
 Student *Exam(char *pInput,  char *pItemName);
  
-Here:
-typedef struct item
-{
-char *pName;
-int quantity, write_off; //write_off: 0, if not expired yet, 1 if expired
-} ITEM;
+Here:  
+typedef struct item  
+{  
+char *pName;  
+int quantity, write_off; //write_off: 0, if not expired yet, 1 if expired  
+} ITEM;  
  
-and the input string consists of segments enclosed into brackets.
+and the input string consists of segments enclosed into brackets.  
  
-The segments contain 3 components: “ Name: <string>   Quantity: <integer>   Expires: <integer>-<integer>   ”
-The order of components may be any. Example:  
-[ Name: Mackerel   Quantity: 1000   Expires: 10–2018   ]   [ Quantity: 500   Name: Sardine   Expires: 12–2017   ]   [ Expires: 1–2020   Quantity: 10000    Name: Tuna   ]
+The segments contain 3 components: “ Name: <string>   Quantity: <integer>   Expires: <integer>-<integer>   ”  
+The order of components may be any. Example:    
+[ Name: Mackerel   Quantity: 1000   Expires: 10–2018   ]   [ Quantity: 500   Name: Sardine   Expires: 12–2017   ]   [ Expires: 1–2020   Quantity: 10000    Name: Tuna   ]  
  
-The number of spaces in components and between segments is any except zero (as many as you want) but after colon (:) only one.
+The number of spaces in components and between segments is any except zero (as many as you want) but after colon (:) only one.  
 There are also spaces before ] and after [ .
 The item name does not contain spaces.
  
