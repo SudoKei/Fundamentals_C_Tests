@@ -44,7 +44,7 @@ ITEM *Exam(char *pInput,int *pnItems){
     //pName
     end_flag = strstr(start_flag,",");
     *(end_flag)='\0';
-    Items[i].pName = (char*)malloc(sizeof(char)*strlen(start_flag));
+    Items[i].pName = (char*)malloc(sizeof(char)*strlen(start_flag)+1);
     strcpy(Items[i].pName,start_flag);
     *(end_flag)=',';
 
