@@ -1,6 +1,6 @@
 # Practice 2   
-Write a function with prototype:
-Student *Exam(char *pInput,  char *pItemName);
+Write a function with prototype:  
+*Exam(char *pInput,  char *pItemName);
  
 Here:  
 typedef struct item  
