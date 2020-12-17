@@ -11,7 +11,7 @@ double AverageMark;
 } STUDENT;  
 
 and the input string consists of segments   “<name>, <mark1>, <mark2>, ... ;“   
-for example:   John Smith 4, 2, 5, 3;   James Farmhand, 4;  
+for example:   John Smith, 4, 2, 5, 3;   James Farmhand, 4;  
 
 The number of segments is not restricted and the number of marks of a student may be any (but nor 0 pieces). The marks are from interval 0...5.   
 There is only one space between the components of segments (i.e. after comma and colon)  
