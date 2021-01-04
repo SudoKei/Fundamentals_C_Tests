@@ -1,17 +1,26 @@
 # Practice 3  
 Write a function with prototype:  
+~~~
 EMPLOYEE *Exam(char *pInput);  
+~~~
  
 Here:  
-typedef struct employee  
-{  
+~~~
+typedef struct employee {  
 char *pFirstName, *pMiddleName, *pLastName;  
 int Brutto, TaxCoefficient, Netto;  
 } EMPLOYEE;  
+~~~
  
-and the input string format is “<first_name> <middle_name> <last_name> <brutto_income>;”  
-for example:   John James Smith 15000;  
-The middle name is optional, i.e. the input string may be also like:   John Smith 15000;  
+and the input string format is “first_name middle_name last_name brutto_income;”  
+for example:  
+~~~
+John James Smith 15000;
+~~~
+The middle name is optional, i.e. the input string may be also like:  
+~~~
+John Smith 15000;  
+~~~
 The brutto income is an integer. There is only one space between components.  
  
 The tax coefficient is 25% if the brutto income exceeds 10000,  
