@@ -1,17 +1,23 @@
 # Practice 1
-Write a function with prototype:
+Write a function with prototype:  
+~~~
 STUDENT *Exam(char *pInput,  char *pStudentName);
+~~~
 
 Here:  
-typedef struct student  
-{  
+~~~
+typedef struct student{    
 char *pName;  
 int nMarks, *pMarks; //number of marks and pointer to array of marks   
 double AverageMark;  
 } STUDENT;  
+~~~
 
-and the input string consists of segments   “<name>, <mark1>, <mark2>, ... ;“   
-for example:   John Smith, 4, 2, 5, 3;   James Farmhand, 4;  
+and the input string consists of segments "name, mark1, mark2, ... ;"   
+for example:  
+~~~
+John Smith, 4, 2, 5, 3;   James Farmhand, 4;
+~~~
 
 The number of segments is not restricted and the number of marks of a student may be any (but nor 0 pieces). The marks are from interval 0...5.   
 There is only one space between the components of segments (i.e. after comma and colon)  
